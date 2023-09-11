@@ -1,5 +1,7 @@
 import pandas as pd
-import mysql.connector
+import mysql.connector 
+import sys
+
 
 
 db = mysql.connector.connect(
@@ -8,10 +10,16 @@ db = mysql.connector.connect(
     password='password', 
     database='spotify'
 )
-
-
+   
 if db.is_connected():
-    print("successful")
+    print("Successful connection")
+    cursor = db.cursor()
+else:
+   print('Could not connect to MySQL Databse')
+   sys.exit()
+
+
+
 
 cursor = db.cursor()
 
