@@ -23,7 +23,7 @@ else:
 
 cursor = db.cursor()
 
-cursor.execute("SELECT * FROM spotify")
+cursor.execute("SELECT MAX(streams) FROM spotify")
 
 myresult = cursor.fetchall()
 
